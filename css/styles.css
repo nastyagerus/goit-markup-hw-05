@@ -91,7 +91,7 @@ button {
   display: flex;
 }
 
-.logo {
+.logo-link {
   font-family: var(--secondary-font);
   font-weight: 800;
   font-size: 18px;
@@ -100,6 +100,7 @@ button {
   text-transform: uppercase;
   color: var(--title-color-theme-light);
   margin-right: 76px;
+  margin-bottom: 28px;
 }
 
 .box-logo {
@@ -114,6 +115,8 @@ button {
 
 .menu-list {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-item {
@@ -126,7 +129,9 @@ button {
 }
 
 .menu-link {
-  /* display: block; */
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -137,6 +142,7 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--title-color-theme-light);
+  padding-bottom: 24px;
 
   transition: color var(--transition-dur-and-func);
 }
@@ -148,6 +154,8 @@ button {
 }
 
 .menu-link.current::after {
+  position: absolute;
+  bottom: 0;
   display: inline-block;
   color: var(--accent-color);
   content: "";
@@ -164,6 +172,7 @@ button {
 .contact-list {
   display: flex;
   justify-content: center;
+  margin-bottom: 28px;
 }
 
 .contact-item:not(:last-child) {
@@ -671,8 +680,8 @@ button {
 
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform var(--transition-dur-and-func) 250ms,
-    opacity var(--transition-dur-and-func) 250ms;
+  transition: transform var(--transition-dur-and-func),
+    opacity var(--transition-dur-and-func);
 }
 
 .backdrop.is-hidden .modal {
@@ -701,8 +710,15 @@ button {
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  fill: var(--background-color-white);
   background-color: var(--accent-color);
 }
 
+.close-icon {
+  transition: fill var(--transition-dur-and-func);
+}
+
+.modal-close-btn:hover .close-icon,
+.modal-close-btn:focus .close-icon {
+  fill: var(--background-color-white);
+}
 /* =========================/MODAL WINDOW==================================== */
